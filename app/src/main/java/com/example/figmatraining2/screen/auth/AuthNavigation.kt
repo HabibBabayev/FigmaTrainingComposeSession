@@ -1,6 +1,9 @@
 package com.example.figmatraining2.screen.auth
 
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
@@ -11,7 +14,8 @@ import com.example.figmatraining2.screen.stateAndEventControl.LoginEvent
 import com.example.figmatraining2.screen.stateAndEventControl.LoginState
 
 
-fun NavGraphBuilder.authNavigation(navController: NavController, loginState:LoginState, loginEvent: (LoginEvent)->Unit, modifier: Modifier){
+fun NavGraphBuilder.authNavigation(navController: NavController, modifier: Modifier){
+
     navigation(startDestination = Screen.SignUp.route,route= Graph.auth){
 
             composable(route=Screen.SignUp.route){
@@ -21,9 +25,11 @@ fun NavGraphBuilder.authNavigation(navController: NavController, loginState:Logi
                 )
             }
             composable(route=Screen.Login.route){
+                val viewModel: LoginViewModel = hiltViewModel()
+                val state by viewModel.uiState.collectAsState()
                 LoginScreen(modifier=modifier, goBackScreen = {
                     navController.popBackStack()//back to the screen where it came from
-                }, state = loginState, event = {loginEvent}, onForgotPasswordClick = {
+                }, state = state, event = viewModel::onLogInEvent, onForgotPasswordClick = {
                     navController.navigate(Screen.ResetPassword.route)
                 }, onSubmitClick = {navController.navigate(Graph.main)} ,backToSignUp = {
                     navController.popBackStack()

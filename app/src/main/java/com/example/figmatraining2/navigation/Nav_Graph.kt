@@ -3,13 +3,13 @@ package com.example.figmatraining2.navigation
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
+
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.example.figmatraining2.screen.auth.LoginViewModel
+
 
 import com.example.figmatraining2.screen.auth.authNavigation
 import com.example.figmatraining2.screen.main.homeNavigation
@@ -21,16 +21,16 @@ import com.example.figmatraining2.screen.splash.rootNavigation
 @Composable
 fun App_Graph(){
     val navController=rememberNavController()
-    val viewModel: LoginViewModel = hiltViewModel()
-    val state=viewModel.uiState.collectAsState()
 
     Scaffold {contentPadding->
         NavHost(
             navController=navController,
             startDestination = Graph.root
         ){
-           rootNavigation(navController,modifier = Modifier.padding(contentPadding).padding(horizontal = 32.dp))
-            authNavigation(navController, loginState=state.value, loginEvent = viewModel::onLogInEvent,modifier = Modifier.padding(contentPadding).padding(horizontal = 32.dp))
+
+
+            rootNavigation(navController,modifier = Modifier.padding(contentPadding).padding(horizontal = 32.dp))
+            authNavigation(navController, modifier = Modifier.padding(contentPadding).padding(horizontal = 32.dp))
             homeNavigation(navController, modifier = Modifier.padding(contentPadding))
 
         }
