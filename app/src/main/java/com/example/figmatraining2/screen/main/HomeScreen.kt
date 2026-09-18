@@ -1,4 +1,4 @@
-package com.example.figmatraining2.main
+package com.example.figmatraining2.screen.main
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

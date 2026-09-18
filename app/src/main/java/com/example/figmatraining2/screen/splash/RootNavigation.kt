@@ -1,11 +1,10 @@
-package com.example.figmatraining2.root.splash
+package com.example.figmatraining2.screen.splash
 
 import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.figmatraining2.main.HomeScreen
 import com.example.figmatraining2.navigation.Graph
 import com.example.figmatraining2.navigation.Screen
 import kotlinx.coroutines.delay

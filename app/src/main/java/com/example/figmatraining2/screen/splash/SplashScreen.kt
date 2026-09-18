@@ -1,7 +1,5 @@
-package com.example.figmatraining2.root.splash
+package com.example.figmatraining2.screen.splash
 
-import android.window.SplashScreen
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

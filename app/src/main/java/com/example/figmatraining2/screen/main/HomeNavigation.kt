@@ -1,10 +1,8 @@
-package com.example.figmatraining2.main
+package com.example.figmatraining2.screen.main
 
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.Navigation
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.figmatraining2.navigation.Graph

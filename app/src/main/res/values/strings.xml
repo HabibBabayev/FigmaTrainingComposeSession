@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">FigmaTraining2</string>
-
+    <string name="verification_exp_txt">Please write code that sent to your email</string>
+    <string name="registerNumber_exp_txt">Enter you phone number to verify your account</string>
+    <string name="resetPass_exp_txt">Please enter your email address to request your password reset</string>
 </resources>
